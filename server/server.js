@@ -8,7 +8,7 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 // const morgan = require('morgan')
 
-const config = require('../config/config');
+const config = isDev?require('../config/config'):'';
 const webpackConfig = require('../webpack.config');
 
 const isDev = process.env.NODE_ENV !== 'production';
@@ -30,7 +30,7 @@ const io = socketio(server);
 // ================================================================================================
 
 // Set up Mongoose
-mongoose.connect(isDev ? config.db_dev : config.db,{useNewUrlParser: true,useUnifiedTopology: true});
+mongoose.connect(isDev ? config.db_dev : process.env.mongodb,{useNewUrlParser: true,useUnifiedTopology: true});
 mongoose.Promise = global.Promise;
 
 app.use(express.urlencoded({ extended: true }));

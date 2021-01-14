@@ -8,10 +8,11 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 // const morgan = require('morgan')
 
-const config = isDev?require('../config/config'):'';
 const webpackConfig = require('../webpack.config');
 
 const isDev = process.env.NODE_ENV !== 'production';
+const config = isDev?require('../config/config'):'';
+
 const port  = process.env.PORT || 8080;
 const passport = require('passport')
 const session = require('express-session')

@@ -14,14 +14,14 @@ module.exports = merge(commonConfig, {
 
   plugins: [
     new UglifyJsPlugin({
-    uglifyOptions: {
-    warnings: false,
-    ie8: false,
-    output: {
-    comments: false
-      }
-      }
+      uglifyOptions: {
+        warnings: false,
+        ie8: false,
+        output: {
+        comments: false
+          }
+        }
       })
-    ],
+    ]
 
 });

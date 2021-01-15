@@ -30,8 +30,26 @@ const io = socketio(server);
 // ================================================================================================
 
 // Set up Mongoose
-mongoose.connect(isDev ? config.db : process.env.MONGO_URI,{useNewUrlParser: true,useUnifiedTopology: true});
-mongoose.Promise = global.Promise;
+// mongoose.connect(isDev ? config.db : process.env.MONGO_URI,{useNewUrlParser: true,useUnifiedTopology: true});
+// mongoose.Promise = global.Promise;
+
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(isDev ? config.db : process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useFindAndModify: false,
+    })
+
+    mongoose.Promise = global.Promise;
+
+
+    console.log(`MongoDB Connected: ${conn.connection.host}`)
+  } catch (err) {
+    console.error(err)
+    process.exit(1)
+  }
+}
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

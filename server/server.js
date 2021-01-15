@@ -111,7 +111,7 @@ if (isDev) {
   });
 }
 
-server.listen(port, '0.0.0.0', (err) => {
+server.listen(process.env.PORT || 8080, '0.0.0.0', (err) => {
   if (err) {
     console.log(err);
   }

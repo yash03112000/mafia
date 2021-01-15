@@ -24,29 +24,20 @@ const socketio = require('socket.io');
 const http = require('http');
 const server = http.createServer(app);
 const io = socketio(server);
-// const sharedsession = require("express-socket.io-session");
 
 
 // Configuration
 // ================================================================================================
 
 // Set up Mongoose
-mongoose.connect(isDev ? config.db_dev : process.env.mongodb,{useNewUrlParser: true,useUnifiedTopology: true});
+mongoose.connect(isDev ? config.db : process.env.mongodb,{useNewUrlParser: true,useUnifiedTopology: true});
 mongoose.Promise = global.Promise;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-// // Express Session
-// app.use(
-//   session({
-//     secret: 'keyboard cat',
-//     resave: false,
-//     saveUninitialized: false,
-//     // store: new MongoStore({ mongooseConnection: mongoose.connection }),
-//   })
-// )
+
 
 
 var idk  = session({

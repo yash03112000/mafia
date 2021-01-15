@@ -30,7 +30,7 @@ const io = socketio(server);
 // ================================================================================================
 
 // Set up Mongoose
-mongoose.connect(isDev ? config.db : process.env.mongodb,{useNewUrlParser: true,useUnifiedTopology: true});
+mongoose.connect(isDev ? config.db : process.env.MONGO_URI,{useNewUrlParser: true,useUnifiedTopology: true});
 mongoose.Promise = global.Promise;
 
 app.use(express.urlencoded({ extended: true }));

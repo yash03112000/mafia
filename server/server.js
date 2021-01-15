@@ -34,7 +34,6 @@ const io = socketio(server);
 // mongoose.Promise = global.Promise;
 
 
-connectDB();
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(isDev ? config.db : process.env.MONGO_URI, {
@@ -52,6 +51,9 @@ const connectDB = async () => {
     process.exit(1)
   }
 }
+
+connectDB();
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

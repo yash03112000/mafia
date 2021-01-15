@@ -33,6 +33,8 @@ const io = socketio(server);
 // mongoose.connect(isDev ? config.db : process.env.MONGO_URI,{useNewUrlParser: true,useUnifiedTopology: true});
 // mongoose.Promise = global.Promise;
 
+
+connectDB();
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(isDev ? config.db : process.env.MONGO_URI, {

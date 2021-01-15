@@ -9,9 +9,7 @@ const game = ({match}) =>{
 
     const [load,setLoad] = useState(true);
     const [gamename,setGamename] = useState('');
-    const [username,setUsername] = useState('');
-    const [gameid,setGameid] = useState('');
-    const [playerid,setPlayerid] = useState('');
+    const [isDev,setisDev] = useState(false);
 
 
     useEffect(()=>{
@@ -25,6 +23,7 @@ const game = ({match}) =>{
                         .then((res)=>{
                             res.json().then((res)=>{
                                 setGamename(res.gamename);
+                                // setisDev(res.isDev);
                                 // setUsername(res.username);
                                 // setGameid(res.gameid);
                                 // setPlayerid(res.playerid);
@@ -42,7 +41,7 @@ const game = ({match}) =>{
     return(
         load?<h1>Loading...</h1>:
         <> 
-            <Chat gamename={gamename}  />
+            <Chat gamename={gamename} isDev={isDev} />
         </>
         );
 } 

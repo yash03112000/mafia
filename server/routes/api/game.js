@@ -4,12 +4,13 @@ const mongoose = require('mongoose')
 const User = require('../../models/User')
 const Game = require('../../models/Game')
 const nanoid = require('nano-id')
+const isDev = process.env.NODE_ENV !== 'production';
 
 
 
 
 
-
+// console.log(process.env.NODE_ENV)
 router.get('/checkvalid',(req,res,next)=>{
     
     User.findById(req.user.id)
@@ -70,6 +71,7 @@ router.put('/details',(req,res,next)=>{
         .then((game)=>{
             res.json({
                 gamename:game.name,
+                isDev:isDev
                 // username:req.user.username,
                 // playerid:req.user._id,
                 // gameid:game._id

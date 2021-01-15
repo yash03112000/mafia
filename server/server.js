@@ -36,7 +36,7 @@ const io = socketio(server);
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(isDev ? config.db : process.env.MONGO_URI, {
+    const conn = await mongoose.connect(isDev ? config.db_dev : process.env.MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,

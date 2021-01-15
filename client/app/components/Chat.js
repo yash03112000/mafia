@@ -9,7 +9,7 @@ import socketIOClient from "socket.io-client";
 
 
 
-const Chat = ({gamename}) =>{
+const Chat = ({gamename,isDev}) =>{
 
     // const [msg,setMsg] = useState([]);
     const [load,setLoad] = useState(true);
@@ -26,13 +26,16 @@ const Chat = ({gamename}) =>{
 
 
 
+
+
     const msgref = useRef();
     // const io = useRef();
     // const username = username;
     // const room = gameid;
     const socket = useRef();
     useEffect(()=>{
-        socket.current = socketIOClient('http://localhost:8080/');
+        if(isDev) socket.current = socketIOClient('http://localhost:8080/');
+        else socket.current = socketIOClient('https://mafiabyyash.herokuapp.com/');
         socket.current.emit('joinRoom');
 
         socket.current.on('usernames',names=>{

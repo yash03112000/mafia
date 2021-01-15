@@ -12,7 +12,7 @@ const Msg = ({socket}) =>{
 
     useEffect(()=>{
         socket.current.on('message', message => {
-            console.log(message);
+            // console.log(message);
             if(message.id==="poll"){
                 setPoll((messages) => [...messages, {pollid:message.pollid,voted:false,time:true}]);
             }
@@ -82,11 +82,11 @@ const Msg = ({socket}) =>{
                    </div>
                )
             }else if(msg.id==="poll"){
-                console.log(msg);
+                // console.log(msg);
                 var i;
                 for(i=0;i<poll.length;i++){
                     if(msg.pollid === poll[i].pollid){
-                        console.log(poll[i]);
+                        // console.log(poll[i]);
                         if(poll[i].voted){
                             return(
                                 <div className="pollmain" >
@@ -152,7 +152,7 @@ const Msg = ({socket}) =>{
             }
 
            })}                                    
-       </div>:<h1>Nothing Yet:(</h1>)
+       </div>:<h1>Server Error:(</h1>)
     )
 } 
 

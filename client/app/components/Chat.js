@@ -91,7 +91,7 @@ const Chat = ({gamename,isDev}) =>{
     const sendmsg = (e)=>{
         e.preventDefault();
         if(!read){
-            console.log(msgref.current.value);
+            // console.log(msgref.current.value);
             var msg = msgref.current.value
             socket.current.emit('message',{msg})
             msgref.current.value = '';

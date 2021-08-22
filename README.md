@@ -1,33 +1,31 @@
-# MERN-boilerplate
+This is a MERN stack project .
 
-This is a boilerplate project using the following technologies:
-- [React](https://facebook.github.io/react/) and [React Router](https://reacttraining.com/react-router/) for the frontend
-- [Express](http://expressjs.com/) and [Mongoose](http://mongoosejs.com/) for the backend
-- [Sass](http://sass-lang.com/) for styles (using the SCSS syntax)
-- [Webpack](https://webpack.github.io/) for compilation
+This Project is hosted on [`Heroku`](https://www.heroku.com) can be assessed at [`Mafia`](https://mafiabyyash.herokuapp.com/).
+MongoDB database is hosted on [`Atlas`](https://cloud.mongodb.co)
 
+In This Platfrom Users can
 
-## Requirements
+- Login and Create account
+- User can create a Private/Public room and share the linkID among friends.
+- They can join a Private room using link or Join a Public Room.
+- Start a game and chat to each other real-time.
 
-- [Node.js](https://nodejs.org/en/) 6+
+## Getting Started
 
-```shell
-npm install
+First, run the development server:
+
+```bash
+yarn run dev
+# or
+npm run dev
 ```
 
+## Tech-Stack Used
 
-## Running
+Following are the Packages used. Feel free to [Email](mailto:yashag@iitk.ac.in) in case you need help or find any bug
 
-Make sure to add a `config.js` file in the `config` folder. See the example there for more details.
-
-Production mode:
-
-```shell
-npm start
-```
-
-Development (Webpack dev server) mode:
-
-```shell
-npm run start:dev
-```
+- [`MongoDB`](https://www.mongodb.com/)
+- [`NodeJS`](https://nodejs.org/en/)
+- [`Express`](https://expressjs.com/)
+- [`React`](https://github.com/facebook/react)
+- [`SocketIO`](https://github.com/socketio/socket.io)

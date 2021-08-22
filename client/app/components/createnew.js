@@ -64,7 +64,7 @@ const createnew = () =>{
                 <input value={Name} onChange={(e)=>setName(e.target.value)} type="text" />
                 <br />
                 <label>Status:</label>
-                <select id="status" name="status" value="public" onChange={(e)=>{e.target.value==='private'?setPrivate(true):setPrivate(false)}}>
+                <select id="status" className="form-control" name="status" value="public" onChange={(e)=>{e.target.value==='private'?setPrivate(true):setPrivate(false)}}>
                     <option value="public" >Public</option>
                     <option value="private">Private</option>
                 </select>

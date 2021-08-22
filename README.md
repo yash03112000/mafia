@@ -1,4 +1,4 @@
-This is a MERN stack project .
+This is a MERN stack project where users can play popular party game Mafia in online mode.
 
 This Project is hosted on [`Heroku`](https://www.heroku.com) can be assessed at [`Mafia`](https://mafiabyyash.herokuapp.com/).
 

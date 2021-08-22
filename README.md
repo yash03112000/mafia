@@ -1,6 +1,7 @@
 This is a MERN stack project .
 
 This Project is hosted on [`Heroku`](https://www.heroku.com) can be assessed at [`Mafia`](https://mafiabyyash.herokuapp.com/).
+
 MongoDB database is hosted on [`Atlas`](https://cloud.mongodb.co)
 
 In This Platfrom Users can
